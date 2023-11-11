@@ -4,18 +4,25 @@ version = "0.1.0"
 authors = ["lingllqs"]
 edition = "2018"
 
+[package.metadata.bootimage]
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04"]
+test-success-exit-code = 33 # bootimage 映射我们的自定义成功代码为 0
 
-[profile.dev]
-panic = "abort" # panic 时禁用栈展开
 
-[profile.release]
-panic = "abort"
+# [profile.dev]
+# panic = "abort" # panic 时禁用栈展开
+#
+# [profile.release]
+# panic = "abort"
 
 [dependencies]
 bootloader = "0.9.23"
 volatile = "0.2.6"
 spin = "0.5.2"
+x86_64 = "0.14.2"
+
 
 [dependencies.lazy_static]
 version = "1.0"
 features = ["spin_no_std"]
+
