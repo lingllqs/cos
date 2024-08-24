@@ -1,1 +1,15 @@
 target/
+*.o
+*.img
+*.out
+*.bin
+*.ini
+*.map
+*.zst
+*.gz
+
+
+build/
+tests/
+bochs/src
+bochs/pkg
